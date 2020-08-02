@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { AddCategory } from './components/AddCategory'
+import { GiphyGrid } from './components/GiphyGrid'
+
 
 export const Giphy = () => {
 
@@ -10,15 +12,16 @@ export const Giphy = () => {
 
   return (
     <>
-      <h2>Giphy App</h2>
+      <h2>Giphy React</h2>
       <AddCategory setCategories={setCategories }/>
       <hr />
 
       <ol>
         {
-          categories.map( category => {
-            return <li key={category}>{category}</li>
-          })
+          categories.map( category => (
+            <GiphyGrid key={category} category={category}></GiphyGrid>
+            )
+          )
         }
       </ol>
     </>
